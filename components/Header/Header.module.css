@@ -40,3 +40,22 @@
 .header h1:hover {
     transform: scale(0.85);
 }
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+.profile a:hover {
+    background-color: #afafaf;
+}

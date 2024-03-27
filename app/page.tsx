@@ -1,9 +1,10 @@
 import styles from './page.module.css';
-
+import { getCookie } from 'cookies-next';
 
 
 
 const Home: React.FC = () => {
+
 
     
     return (
