@@ -2,12 +2,11 @@
 import styles from './page.module.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Message } from '@/components/Message/Message';
 import { setCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-
 
 interface FormStateType {
     email: string,
@@ -20,6 +19,7 @@ const LoginPage: React.FC = () => {
     const router = useRouter();
 
     const [text, setText] = useState<string>('');
+
 
     const {
         register, 

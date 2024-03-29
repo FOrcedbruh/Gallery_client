@@ -1,0 +1,36 @@
+.container {
+    position: absolute;
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    top: 100%;
+    left: 80%;
+    box-shadow: 0 0 20px 5px #c5c5c5;
+    border-radius: 16px;
+}
+.container ul {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.container ul li {
+    cursor: pointer;
+    width: 95%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 12px;
+    border-radius: 16px;
+}
+.container ul li:hover {
+    background: #dfdfdf;
+}
