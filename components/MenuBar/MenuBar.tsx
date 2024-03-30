@@ -11,6 +11,7 @@ const MenuBar: React.FC = () => {
         deleteCookie('token');
         deleteCookie('username');
         deleteCookie('email');
+        deleteCookie('_id');
 
         router.push('/login');
     }
@@ -18,6 +19,9 @@ const MenuBar: React.FC = () => {
     return (
         <div className={styles.container}>
             <ul>
+                <li onClick={() => router.push('/folders')}>
+                    Мои папки
+                </li>
                 <li onClick={Logout}>
                     Выход
                 </li>

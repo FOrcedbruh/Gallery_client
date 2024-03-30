@@ -82,13 +82,18 @@ const ProfilePage: React.FC = () => {
     const [username, setUsername] = useState<string | undefined>('');
     const [email, setEmail] = useState<string | undefined>('');
 
-    const [folderState, setFolderState] = useState<boolean>(false);
-    const [text, setText] = useState<string>('');
+    const [avatar, setAvatar] = useState<string>('');
+
 
     useEffect(() => {
-        setEmail(getCookie('email'));
         setUsername(getCookie('username'));
+        setEmail(getCookie('email'));
+        
+
     }, [token]);
+
+    const [folderState, setFolderState] = useState<boolean>(false);
+    const [text, setText] = useState<string>('');
 
     return (
         <section className={styles.window}>

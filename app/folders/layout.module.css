@@ -1,0 +1,46 @@
+.window {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pictures {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.folders {
+    border-radius: 16px;
+    margin: 100px 0 0 40px;
+    padding: 40px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    gap: 30px;
+    box-shadow: 0 0 10px 3px #dadada;
+}
+.folders a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    background-color: #fff;
+    padding: 10px 40px;
+    border-radius: 16px;
+    width: 100%;
+}
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.error a {
+    color: #000;
+    font-weight: 600;
+}

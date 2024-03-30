@@ -8,6 +8,8 @@ import profileIcon  from './../../icons/profile.svg';
 import arrow from './../../icons/arrow.svg';
 import Image from 'next/image';
 import MenuBar from '../MenuBar/MenuBar';
+import { jwtDecode } from 'jwt-decode';
+
 
 
 const Header: React.FC = () => {
@@ -37,25 +39,20 @@ const Header: React.FC = () => {
       }, []);
 
     useEffect(() => {
-        const src: string = 'http://localhost:8080/auth/getData'
         if (token) {
-            axios.post(src, {
-                token
-            }).then(res => {
-                setCookie('username', res.data.username);
-                setCookie('email', res.data.email);
-                setCookie('_id', res.data._id);
-            })
+            
+            const data: {username: string, email: string, _id: string} = jwtDecode(token);
+
+            setCookie('username', data.username);
+            setCookie('email', data.email);
+            setCookie('_id', data._id);
+
             setTokenCheck(true);
         } else if (!token) {
             setTokenCheck(false);
         }
 
-    }, [tokenCheck]);
-
-    const closeMenu = () => {
-        setMenu(false);
-    }
+    }, [token]);
 
     const username: string | undefined = getCookie('username');
 
@@ -66,7 +63,7 @@ const Header: React.FC = () => {
         <header className={styles.header} ref={menuRef}>
             <h1><Link href={'/'}>Gallery</Link></h1>
             {menu && <MenuBar/>}
-            {tokenCheck ? <div className={styles.profile}><Image src={profileIcon} alt='' width={30} height={30}/> <Link href={'/profile'}>{username}</Link> <Image onClick={() => setMenu(true)} className={styles.menuBtn} src={arrow} alt='' width={20} height={20}/> </div> : <nav>
+            {tokenCheck ? <div className={styles.profile}> <Link href={'/add_picture'}>Создать</Link><Image src={profileIcon} alt='' width={30} height={30}/> <Link href={'/profile'}>{username}</Link> <Image onClick={() => setMenu(true)} className={styles.menuBtn} src={arrow} alt='' width={20} height={20}/> </div> : <nav>
                 <ul>
                     <li>
                         <Link href={'/login'}><span>Войти</span></Link>
