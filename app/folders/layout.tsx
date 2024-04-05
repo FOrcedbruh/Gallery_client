@@ -43,7 +43,7 @@ const Folders = ({children}: {children: React.ReactNode}) => {
                         )
                     })}
                 </div>
-                <div className={styles.pictures}>
+                <div className={styles.data}>
                     {children}
                 </div>
             </section> : <div className={styles.error}><h3>У вас пока нет папок.</h3> <Link  href={'/profile'}>Создать?</Link></div>}

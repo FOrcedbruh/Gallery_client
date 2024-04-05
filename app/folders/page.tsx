@@ -3,7 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { PictureType } from "@/types/FoldersType";
 import { getCookie } from "cookies-next";
-
+import { Picture } from "@/components/Picture/Picture";
+import styles from './layout.module.css';
 
 
 const Page: React.FC = () => {
@@ -24,13 +25,13 @@ const Page: React.FC = () => {
 
     return (
         <section>
-            <h1>
+            <div className={styles.pictures}>
                 {pictures.map((picture, index) => {
-                    return (
-                        <p key={index}>{picture.title}</p>
-                    )
-                })}
-            </h1>
+                        return (
+                            <Picture title={picture.title} key={index} url={picture.url}/>
+                        )
+                    })}
+            </div>
         </section>
     )
 }

@@ -1,0 +1,18 @@
+.main {
+    width: 600;
+    height: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    padding: 0;
+    user-select: none;
+    cursor: zoom-in;
+    transition: opacity .5s ease;
+}
+.main:hover {
+    opacity: 0.6;
+}
+.main img {
+    border-radius: 20px;
+}

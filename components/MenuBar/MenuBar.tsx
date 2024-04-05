@@ -20,7 +20,7 @@ const MenuBar: React.FC = () => {
         <div className={styles.container}>
             <ul>
                 <li onClick={() => router.push('/folders')}>
-                    Мои папки
+                    Мои картинки
                 </li>
                 <li onClick={Logout}>
                     Выход
